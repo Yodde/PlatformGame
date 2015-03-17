@@ -13,6 +13,8 @@ class Object
 public:
 	virtual ~Object();
 	virtual void go() = 0;
+	virtual void goLeft();
+	virtual void goRight();
 	virtual void updateStatus(); 
 	void draw(sf::RenderWindow *&);
 	void reset();
@@ -29,17 +31,20 @@ protected:
 	enum status
 	{
 		stay,
-		goLeft,
-		goRigth,
+		Left,
+		Rigth,
 		immoveable
 	};
 	int mass;
-	//speed
+	//velocity on X and Y axis
 	double vX, vY;
 	//position of object
 	int positionX, positionY;
+	//in pixiels
+	int speed;
 	int objectWidth, objectHeight;
 	sf::Texture objectTexture;
+	sf::RectangleShape objectShape;
 };
 //other classes
 //maybe they'll be in other headers
@@ -48,7 +53,7 @@ class Bonus : Object
 {
 public:
 	virtual ~Bonus();
-	virtual void addPoints();
+	void addPoints();
 	virtual void addLife();
 	//take player//
 protected:
@@ -59,9 +64,10 @@ protected:
 class Creature : Object
 {
 public:
-	~Creature();
+	virtual ~Creature();
+	void addPoints();
 
 private:
-
+	int value;
 };
 

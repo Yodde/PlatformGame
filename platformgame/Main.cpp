@@ -84,7 +84,7 @@ int main()
 				menu[i].setColor(sf::Color::Green);
 			}
 			else{
-				menu[i].setString(options[i]);
+				menu[i].setString(options[i]+" ");
 				menu[i].setColor(sf::Color::Red);
 			}
 		}

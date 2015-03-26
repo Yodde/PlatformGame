@@ -30,10 +30,10 @@ public:
 protected:
 	enum status
 	{
-		stay,
+		Stay,
 		Left,
 		Rigth,
-		immoveable
+		Immoveable
 	};
 	int mass;
 	//velocity on X and Y axis

@@ -1,15 +1,15 @@
 #pragma once
 #include <vector> 
 #include <algorithm>
-
-#include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Level.h"
 
 class Game
 {
 public:
 	Game(sf::RenderWindow *&window);
 	~Game();
-	bool statr();
+	bool startGame();
 protected:
 	enum gameStatus{
 		Game_Start,
@@ -25,10 +25,11 @@ protected:
 	void draw();
 private:
 	sf::RenderWindow *window;
-	
+	Level level;
 	//gamer 
-	// vector objects;
-
+	
+	sf::Texture tabOfTextures[Texture::Object];
+	std::vector<std::vector<sf::Sprite>> sprite;
 	sf::View view;
 	bool moveCamera;
 };

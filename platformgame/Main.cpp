@@ -30,6 +30,7 @@ int main()
 	int width = 800, height = 600;
 	const int menuTabSize = 2;
 	sf::Font font;
+	Game *game;
 	auto fontPath = "mecha.ttf";
 	sf::Vector2f center(width/2, height/2);
 	sf::Vector2f size(width,height);
@@ -93,6 +94,8 @@ int main()
 			{
 			case 0:
 				//new game
+				game = new Game(gameWindow);
+				game->startGame();
 				break;
 			case 1:
 				gameWindow->close();

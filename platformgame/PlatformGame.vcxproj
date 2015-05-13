@@ -89,11 +89,14 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Objects.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Objects.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>

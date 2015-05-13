@@ -1,12 +1,6 @@
 #pragma once
-#include <string>
-#include <fstream>
-#include <vector>
-#include <exception>
 #include "SFML\Graphics.hpp"
 #include "texture.h"
-
-
 class Level
 {
 public:

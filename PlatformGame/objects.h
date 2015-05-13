@@ -1,7 +1,6 @@
 #pragma once
-#include<iostream>
-#include<sfml/Graphics.hpp>
-
+#include<SFML/Graphics.hpp>
+#include "Level.h"
 //__interface IObject
 //{
 //	~IObject(){}
@@ -15,36 +14,48 @@ public:
 	virtual void go() = 0;
 	virtual void goLeft();
 	virtual void goRight();
-	virtual void updateStatus(); 
-	void draw(sf::RenderWindow *&);
+	virtual void updateObject(); 
+	virtual void goUp(); virtual void goDown();
+	virtual void draw(sf::RenderWindow *&);
 	void reset();
 	void stop();
+//	int getPositionX();
+//	int getPositionY();
 	virtual void collision();
+	virtual void jump();
+	int getObjectWidth();
+	int getObjectHeight();
+	sf::Vector2f getPositionXY();
+
+
 	/* to specific class
 	virtual void goLeft();
 	virtual void goRight();
 	virtual void jump();
 	*/
 
-	sf::Vector2i getPositionXY();
 protected:
 	enum status
 	{
 		Stay,
 		Left,
 		Rigth,
+		Down,
+		Up,
 		Immoveable
 	};
+	status objectStatus;
 	int mass;
 	//velocity on X and Y axis
 	double vX, vY;
 	//position of object
 	int positionX, positionY;
+	
 	//in pixiels
 	int speed;
 	int objectWidth, objectHeight;
 	sf::Texture objectTexture;
-	sf::RectangleShape objectShape;
+	sf::RectangleShape objectRectangle;
 };
 //other classes
 //maybe they'll be in other headers
@@ -70,4 +81,3 @@ public:
 private:
 	int value;
 };
-

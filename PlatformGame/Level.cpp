@@ -1,4 +1,9 @@
+#include <string>
+#include <fstream>
+#include <vector>
+#include <exception>
 #include "Level.h"
+
 Level::Level(std::string filename){
 	readFromFile(filename);
 }

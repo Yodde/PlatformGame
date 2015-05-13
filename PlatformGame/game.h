@@ -1,9 +1,9 @@
 #pragma once
-#include <vector> 
-#include <algorithm>
-#include <iostream>
+#include<SFML/Graphics.hpp>
+#include "Objects.h"
 #include "Level.h"
-
+#include "Texture.h"
+#include "Player.h"
 class Game
 {
 public:
@@ -27,7 +27,8 @@ private:
 	sf::RenderWindow *window;
 	Level level;
 	//gamer 
-	
+	Player * player;
+	bool gameOver;
 	sf::Texture tabOfTextures[Texture::Object];
 	std::vector<std::vector<sf::Sprite>> sprite;
 	sf::View view;

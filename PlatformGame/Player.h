@@ -9,7 +9,7 @@ public:
 	void go();
 	void goLeft();
 	void goRight();
-	void collision();
+	bool collision();
 	void updateObject();
 	void alive();
 	void crouch();

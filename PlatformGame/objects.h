@@ -21,7 +21,7 @@ public:
 	void stop();
 //	int getPositionX();
 //	int getPositionY();
-	virtual void collision();
+	virtual bool collision();
 	virtual void jump();
 	int getObjectWidth();
 	int getObjectHeight();
@@ -39,7 +39,7 @@ protected:
 	{
 		Stay,
 		Left,
-		Rigth,
+		Right,
 		Down,
 		Up,
 		Immoveable

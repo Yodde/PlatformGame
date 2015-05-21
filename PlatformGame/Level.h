@@ -8,21 +8,20 @@ public:
 	Level(std::string);
 	~Level();
 	void readFromFile(std::string);
-	
 	struct Tile{
 		Texture::textureType textureType;
-		//bool visible(),isWall(),itisatrap() etc 
+		bool isWall;
 	};
-	//sf::Vector2i(int);
-	std::vector<std::vector<Tile>> texture;
-	int getMapHeigth();
-	int getMapWidth();
-	int getTileHeigth();
-	int getTileWidth();
+	static std::vector<std::vector<Tile>> texture;
+	static int getMapHeigth();
+	static int getMapWidth();
+	static int getTileHeigth();
+	static int getTileWidth();
 
 protected:
-	int mapWidth, mapHeigth;
-	int tileHeight, tileWidth;
+
+	static int mapWidth, mapHeigth;
+	static int tileHeight, tileWidth;
 	float playerPositionX, playerPositionY;
 	//std::string fileName;
 };

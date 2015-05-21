@@ -14,7 +14,9 @@ sf::Vector2f Object::getPositionXY(){
 	return objectRectangle.getPosition();
 }
 void Object::jump(){}
-void Object::collision(){}
+bool Object::collision(){
+	return false;
+}
 void Object::goLeft(){}
 void Object::goRight(){}
 void Object::goUp(){}

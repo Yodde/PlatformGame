@@ -1,19 +1,26 @@
-﻿Build started 2015-05-13 18:50:36.
+﻿Build started 2015-05-21 18:13:01.
      1>Project "C:\Projekty\PlatformGame\PlatformGame\PlatformGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Projekty\SFML-2.2\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Win32\Debug\PlatformGame\\" /Fd"Win32\Debug\PlatformGame\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
-         Game.cpp
-     1>c:\projekty\platformgame\platformgame\game.cpp(123): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Projekty\SFML-2.2\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Win32\Debug\PlatformGame\\" /Fd"Win32\Debug\PlatformGame\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Player.cpp
+         Player.cpp
+     1>c:\projekty\platformgame\platformgame\player.cpp(12): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(70): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(77): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(79): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(89): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(91): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(101): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\projekty\platformgame\platformgame\player.cpp(103): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Projekty\PlatformGame\Debug\PlatformGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Projekty\SFML-2.2\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Projekty\PlatformGame\Debug\PlatformGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Projekty\PlatformGame\Debug\PlatformGame.lib" /MACHINE:X86 Win32\Debug\PlatformGame\Game.obj
          Win32\Debug\PlatformGame\Level.obj
          Win32\Debug\PlatformGame\Main.obj
          Win32\Debug\PlatformGame\Objects.obj
          Win32\Debug\PlatformGame\Player.obj
-     1>Game.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
          PlatformGame.vcxproj -> C:\Projekty\PlatformGame\Debug\PlatformGame.exe
      1>Done Building Project "C:\Projekty\PlatformGame\PlatformGame\PlatformGame.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.11
+Time Elapsed 00:00:02.27

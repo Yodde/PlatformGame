@@ -121,7 +121,6 @@ bool Game::mapLoad(){
 		for (int j = 0; j < mapWidth; ++j){
 			sprite[i][j].setTexture(tabOfTextures[level.texture[i][j].textureType]);
 			sprite[i][j].setPosition(j*level.getTileWidth(), i*level.getTileHeigth());
-			//sprite[i][j].setColor(sf::Color::Yellow);
 		}
 	return true;
 }

@@ -63,8 +63,8 @@ void Game::start(){
 				case sf::Keyboard::Left:
 					this->player->goLeft();
 					break;
-				case sf::Keyboard::Up:
-					this->player->goUp();
+				case sf::Keyboard::Space:
+					this->player->jump();
 					break;
 				case sf::Keyboard::Down:
 					this->player->goDown();

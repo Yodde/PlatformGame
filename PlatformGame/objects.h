@@ -19,15 +19,12 @@ public:
 	virtual void draw(sf::RenderWindow *&);
 	void reset();
 	void stop();
-//	int getPositionX();
-//	int getPositionY();
 	virtual bool collision();
 	virtual void jump();
+	virtual bool inAir();
 	int getObjectWidth();
 	int getObjectHeight();
 	sf::Vector2f getPositionXY();
-
-
 	/* to specific class
 	virtual void goLeft();
 	virtual void goRight();
@@ -45,12 +42,12 @@ protected:
 		Immoveable
 	};
 	status objectStatus;
-	int mass;
+	int mass;	
 	//velocity on X and Y axis
 	double vX, vY;
 	//position of object
 	int positionX, positionY;
-	
+	bool jumping;
 	//in pixiels
 	int speed;
 	int objectWidth, objectHeight;

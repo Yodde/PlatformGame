@@ -21,3 +21,6 @@ void Object::goLeft(){}
 void Object::goRight(){}
 void Object::goUp(){}
 void Object::goDown(){}
+bool Object::inAir(){
+	return false;
+}

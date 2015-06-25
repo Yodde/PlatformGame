@@ -15,7 +15,7 @@ Player::Player(int positionX, int positionY, Level level){
 	this->objectRectangle.setPosition(positionX, positionY);
 	this->vX = 0; this->vY = 0; this->mass = 0;
 	this->objectStatus = Stay;
-
+	this->jumping = true;
 }
 Player::~Player(){}
 void Player::go(){}
@@ -57,19 +57,51 @@ void Player::updateObject(){
 	case Object::Down:
 		if (collision())
 			objectStatus = Stay;
-		else
+		else{
 			this->vY = this->speed;
+			this->jumping = false;
+		}
 		break;
-	case Object::Up:
-		this->vY= -this->speed;
+	case Object::Up:{
+		vY = -speed;
+		int posY=0;
+		if (!jumping)
+			posY = getPositionXY().y - speed * 10 - objectHeight + 10; //sprawdziæ magiczne liczby, jak wysoko skoczyæ mo¿e 
+		this->jumping = true;
+		if (getPositionXY().y <= posY)
+			this->objectStatus = Down;
+		std::cout << "skacze";
+	}
 		break;
 	default:
 		break;
 	}
+	//if (!jumping){
+	//	if (inAir()){
+	//		vY = speed;
+	//	}
+	//	else
+	//	{
+	//		vY = 0;
+	//	}
+	//}
+	//else{
+	//	vY = 0;
+
+	//}
+	if (inAir()){
+  		vY = speed;
+		objectStatus = Down;
+	}
+	else vY = 0;
 	if (vX != 0 || vY != 0)
 		this->objectRectangle.move(this->vX, this->vY);
 }
-void Player::jump(){}
+
+void Player::jump(){
+	objectStatus = Up;
+}
+
 bool Player::collision(){
 	switch (objectStatus)
 	{
@@ -98,17 +130,28 @@ bool Player::collision(){
 		break;
 	}
 	case Down:{
-		int positionY = (getPositionXY().y + objectHeight + speed) / Level::getTileHeigth();
+		int positiony = (getPositionXY().y + objectHeight + speed) / Level::getTileHeigth();
 		for (int i = 0; i < objectWidth; ++i){
-			int positionX = (getPositionXY().x + i) / Level::getTileWidth();
-			if (Level::texture.at(positionY).at(positionX).isWall){
-				std::cout << "Kolizja na pozycji " << positionX << " " << positionY
-					<< " " << getPositionXY().x << " " << getPositionXY().y << std::endl;
+			int positionx = (getPositionXY().x + i) / Level::getTileWidth();
+			if (Level::texture.at(positiony).at(positionx).isWall){
 				return true;
 			}
 		}
 		break;
 	}
+	//case Up:{
+	//	int positionY = (getPositionXY().y - speed - 1) / Level::getTileHeigth();
+	//	for (int i = 0; i < objectWidth; ++i){
+	//		int positionX = (getPositionXY().x + i) / Level::getTileWidth();
+	//		if (Level::texture.at(positionY).at(positionX).isWall){
+	//			std::cout << "Kolizja na pozycji " << positionX << " " << positionY
+	//				<< " " << getPositionXY().x << " " << getPositionXY().y << std::endl;
+	//			return true;
+	//		}
+	//	}
+	//	break;
+
+	//}
 	default:
 		return false;
 	}
@@ -116,4 +159,17 @@ bool Player::collision(){
 }
 void Player::draw(sf::RenderWindow *&window){
 	window->draw(this->objectRectangle);
+}
+
+bool Player::inAir(){
+	int positiony = (getPositionXY().y + objectHeight + speed) / Level::getTileHeigth();
+	for (int i = 0; i < objectWidth; ++i){
+		int positionx = (getPositionXY().x + i) / Level::getTileWidth();
+		if (Level::texture.at(positiony).at(positionx).isWall){
+			jumping = false;
+			return false;
+		}
+	}
+	jumping = true;
+	return true;
 }

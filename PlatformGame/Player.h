@@ -14,9 +14,8 @@ public:
 	void alive();
 	void crouch();
 	void jump();
+	bool inAir();
 	void draw(sf::RenderWindow *&);
 	void goUp(); void goDown();
 private:
-
-
 };
